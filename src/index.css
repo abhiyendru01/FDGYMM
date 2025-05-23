@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 100% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 69%;
+
+    --accent: 0 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 0 100% 38%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 100% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 100% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 0 100% 38%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-white font-rajdhani overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron font-bold tracking-wider;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply bg-gradient-card backdrop-blur-lg border border-opacity-30 border-fdgym-red shadow-xl;
+  }
+  
+  .neon-border {
+    @apply relative before:absolute before:inset-0 before:p-[1px] before:rounded-lg before:bg-fdgym-neon-red before:blur-sm;
+  }
+  
+  .neon-text {
+    @apply text-fdgym-neon-red animate-glow;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-orbitron font-bold mb-8 relative inline-block;
+  }
+  
+  .section-heading::after {
+    @apply content-[''] absolute left-0 bottom-0 w-full h-0.5 bg-fdgym-neon-red;
+  }
+}
